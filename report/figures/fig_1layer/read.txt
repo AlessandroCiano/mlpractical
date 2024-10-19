@@ -1,0 +1,7 @@
+1-hidden layer networks by using either 32, 64
+and 128 ReLU hidden units per layer on EMNIST
+
+learning_rate = 0.001
+num_epochs = 100
+stats_interval = 1
+input_dim, output_dim, hidden_dim = 784, 47, 32

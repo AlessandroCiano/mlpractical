@@ -1,5 +1,5 @@
 %% REPLACE SXXXXXX with your student number
-\def\studentNumber{SXXXXXX}
+\def\studentNumber{S2659893}
 
 
 %% START of YOUR ANSWERS
@@ -26,7 +26,7 @@
 
 %% Question 1:
 \newcommand{\questionOne} {
-\youranswer{Question 1 - Explain what these figures contain and how the curves evolve, and spot where overfitting occurs. Reason based on the min/max points and velocities (direction and magnitude of change) of the accuracy and error curves}
+\youranswer{the training and validation curves of classification both show an improvement over time in the first 10 epocs, but soon after the validation curve starts to decrease while the training curve continues to increase steadily. This is a clear sign of overfitting, as the model is learning the training data too well and is not generalising well to the validation data. The cross-entropy error curves (Figure 1b) shows a similar trend, but in the opposite way: in the first epocs both errors tend to reduce significantly and after the same 10 epocs the validation curve begins to increase learly while the training curve still decreasing, again a sign of overfitting. It is interesting to note that in both a and b the training plot shows better performance torwards an asymptote, but the gap between the training and validation curves grows much faster in the error curves than in the accuracy curves.}
 }
 
 %% Question 2:
@@ -79,16 +79,17 @@
 \begin{figure}[t]
     \centering
     \begin{subfigure}{\linewidth}
-        \includegraphics[width=\linewidth]{figures/empty_acc_curve_width.png}
+        \includegraphics[width=\linewidth]{figures/fig_1layer/32accuracy.png}
         \caption{accuracy by epoch}
         \label{fig:width_acccurves}
     \end{subfigure} 
     \begin{subfigure}{\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{figures/empty_error_curve_width.png}
+        \includegraphics[width=\linewidth]{figures/fig_1layer/32error.png}
         \caption{error by epoch}
         \label{fig:width_errorcurves}
     \end{subfigure} 
+    
     \caption{Training and validation curves in terms of classification accuracy (a) and cross-entropy error (b) on the EMNIST dataset for different network widths.}
     \label{fig:width}
 \end{figure} 
@@ -146,7 +147,6 @@
 %% Question Table 1:
 \newcommand{\questionTableOne} {
 \youranswer{
-Question Table 1 - Fill in Table 1 with the results from your experiments varying the number of hidden units.
 %
 \begin{table}[t]
     \centering
@@ -154,9 +154,9 @@ Question Table 1 - Fill in Table 1 with the results from your experiments varyin
     \toprule
         \# Hidden Units & Val. Acc. & Train Error & Val. Error\\
     \midrule
-         32            &    --.-   &  -.--- &   -.---            \\
-         64            &    --.-   &  -.---  &   -.---               \\
-         128           &    --.-   &  -.---  &   -.---           \\ 
+         32            &    7.87e-01   &  5.51e-01 &   6.89e-01            \\
+         64            &    8.09e-01   &  3.41e-01  &   6.74e-01               \\
+         128           &    8.03e-01   &  1.69e-01  &   9.94e-01           \\ 
     \bottomrule
     \end{tabular}
     \caption{Validation accuracy (\%) and training/validation error (in terms of cross-entropy error) for varying network widths on the EMNIST dataset.}
@@ -176,9 +176,9 @@ Question Table 2 - Fill in Table 2 with the results from your experiments varyin
     \toprule
         \# Hidden Layers & Val. Acc. & Train Error & Val. Error \\
     \midrule
-         1               &      --.-      &   -.--- & -.---                \\
-         2               &      --.-      &   -.--- & -.---                \\
-         3               &      --.-      &   -.--- & -.---                \\ 
+         1               &      8.03e-01      &   1.69e-01 & 9.94e-01          \\
+         2               &      8.18e-01      &   9.21e-02 & 1.52                \\
+         3               &      8.22e-01      &   1.12e-01 & 1.78                \\ 
     \bottomrule
     \end{tabular}
     \caption{Validation accuracy (\%) and training/validation error (in terms of cross-entropy error) for varying network depths on the EMNIST dataset.}

@@ -1,0 +1,10 @@
+PYTORCH
+
+DATA (WHAT REQUIRED):
+Dataset object used by a DataLoader object #to load data in batches
+
+__len__ #returns the size of the dataset
+__getitem__ #returns the i^th sample of the dataset
+
+(data converted to Pytorch tensors with [TensorDataset] using [torch.from_numpy()])
+
